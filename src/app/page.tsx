@@ -1,9 +1,29 @@
-import Link from "next/link";
+import NewAppointmentButton from './create-appointment';
 
-export default function HomePage() {
+function HomePage() {
+  // Array de consultas
+  const appointments = [
+    { id: 1, time: '09:00', client: 'Cara1', pet: 'Bixo1', reason: 'Vacinação' },
+    { id: 2, time: '10:30', client: 'Cara2', pet: 'Bixo2', reason: 'Consulta de rotina' },
+    { id: 3, time: '14:00', client: 'Cara3', pet: 'Bixo3', reason: 'Exame de sangue' },
+  ];
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-      Hello 
-    </main>
+    <div className="container mx-auto mt-10">
+      <NewAppointmentButton></NewAppointmentButton>
+      <h1 className="text-3xl font-bold mb-5">Agenda do Dia</h1>
+
+      <div className="grid grid-cols-1 gap-4">
+        {appointments.map(appointment => (
+          <div key={appointment.id} className="bg-gray-100 p-4 rounded-lg shadow-md">
+            <p className="text-lg font-semibold">{appointment.time}</p>
+            <p><span className="font-semibold">Cliente:</span> {appointment.client}</p>
+            <p><span className="font-semibold">Pet:</span> {appointment.pet}</p>
+            <p><span className="font-semibold">Motivo:</span> {appointment.reason}</p>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
+
+export default HomePage;
