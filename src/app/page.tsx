@@ -5,6 +5,8 @@ function HomePage() {
   const appointments = [
     { id: 1, time: '09:00', client: 'Cara1', pet: 'Bixo1', reason: 'Vacinação' },
     { id: 2, time: '10:30', client: 'Cara2', pet: 'Bixo2', reason: 'Consulta de rotina' },
+    { id: 3, time: '14:00', client: 'Cara3', pet: 'Bixo3', reason: 'Exame de sangue' },
+    { id: 4, time: '14:00', client: 'Cara3', pet: 'Bixo3', reason: 'Exame de sangue' },
   ];
   return (
     <div className="container mx-auto mt-10">
